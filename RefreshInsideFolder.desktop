@@ -1,0 +1,17 @@
+# RefreshInsideFolder
+# Version 1.0
+# contact: piotr4@gmail.com
+# GPLv3
+
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=inode/directory;
+Actions=refresh
+X-KDE-Priority=TopLevel
+
+[Desktop Action refresh]
+Name=Refresh
+Icon=view-refresh
+Exec=bash -c 'xdotool key F5; if [ $? -ne 0 ]; then kdialog --title "xdotool is required" --error "Please install 'xdotool' app. For instance type in console: sudo apt install xdotool"; fi;';
+ 
